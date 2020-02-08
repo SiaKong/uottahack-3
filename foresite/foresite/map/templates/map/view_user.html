@@ -1,0 +1,18 @@
+{% if user %}
+	<h2> User {{ user.username }}#{{ user.id }}'s Groups </h2>
+	<ul>
+	{% for group in user.group_set.all %}
+		<li><a href="/map/groups/{{ group.id }}"> {{ group.groupname }}#G{{ group.id }}</a></li>
+	{% endfor %}
+	</ul>
+
+	<h2> User {{ user.username }}#{{ user.id }}'s Friends </h2>
+	<ul>
+	{% for friend in user.friends.all %}
+		<li><a href="/map/users/{{ friend.id }}"> {{ friend.username }}#{{ friend.id }}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<h2> User not found. </h2>
+	<p>This user is not available.</p>
+{% endif %}

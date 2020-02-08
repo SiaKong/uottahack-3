@@ -1,0 +1,11 @@
+{% if group %}
+	<h2> Members of {{ group.groupname }}#G{{ group.id }} </h2>
+	<ul>
+	{% for member in group.users.all %}
+		<li><a href="/map/users/{{ member.id }}"> {{ member.username }}#{{ member.id }}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<h2> Group not found. </h2>
+	<p>There is no group with the ID {{group_id}}.</p>
+{% endif %}
