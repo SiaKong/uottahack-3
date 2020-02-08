@@ -8,7 +8,7 @@
 
 	<h2> User {{ user.username }}#{{ user.id }}'s Friends </h2>
 	<ul>
-	{% for friend in user.friends.all %}
+	{% for friend in user.mapuser.friends.all %}
 		<li><a href="{% url 'map:view_user' friend.id %}"> {{ friend.username }}#{{ friend.id }}</a></li>
 	{% endfor %}
 	</ul>

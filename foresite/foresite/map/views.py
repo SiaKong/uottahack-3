@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Group, User
+from .models import MapGroup, User
 
 #First view - index, contains the interactive map
 def index(request):
@@ -8,7 +8,7 @@ def index(request):
 
 #View a given group and its members
 def view_group(request, group_id):
-	group = Group.objects.get(id=group_id)
+	group = MapGroup.objects.get(id=group_id)
 	context = {
 		'group' : group,
 		'group_id' : group_id

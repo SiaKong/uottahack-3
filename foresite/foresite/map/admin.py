@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import User, Group
+from .models import MapUser, MapGroup
 
 # Register your models here.
-admin.site.register(User)
-admin.site.register(Group)
+admin.site.register(MapUser)
+admin.site.register(MapGroup)
 
