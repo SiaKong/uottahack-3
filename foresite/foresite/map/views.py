@@ -24,10 +24,13 @@ def view_user(request, user_id):
 	}
 	return render(request, 'map/view_user.html', context)
 
+#Create a new user
 def create_user(request):
 	context = {}
 	return render(request, 'map/create_user.html', context)
 
+#Create a new group
 def create_group(request):
 	context = {}
 	return render(request, 'map/create_group.html', context)
+
